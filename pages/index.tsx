@@ -1,13 +1,15 @@
+// index.tsx
+
 import { useRouter } from 'next/router';
 
 export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-green-100 flex items-center justify-center">
-      <div className="bg-white shadow-lg rounded-2xl p-10 w-full max-w-md text-center space-y-6">
-        <h1 className="text-3xl font-extrabold text-blue-700">Welcome to My Auth App</h1>
-        <p className="text-gray-600 text-sm">Please choose an option to get started:</p>
+    <div className="min-h-screen bg-gradient-to-r from-pink-500 to-sky-500 flex items-center justify-center">
+      <div className="bg-white shadow-lg rounded-2xl p-10 w-full max-w-md text-center space-y-6 custom-class">
+        <h1 className="text-3xl font-extrabold text-white">Welcome to My Auth App</h1>
+        <p className="text-gray-300 text-sm">Please choose an option to get started:</p>
         <div className="flex justify-center gap-4">
           <button
             onClick={() => router.push('/login')}
