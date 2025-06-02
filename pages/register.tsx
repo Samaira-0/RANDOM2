@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 export default function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -7,6 +8,7 @@ export default function Register() {
   const [showOtpInput, setShowOtpInput] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const router = useRouter(); // Initialize useRouter
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -31,7 +33,7 @@ export default function Register() {
     try {
       await axios.post('/api/auth/verify-register-otp', { email: form.email, otp });
       alert('Registration successful! Please login.');
-      // redirect to login or reset form here
+      router.push('/'); // Redirect to index page after successful registration
     } catch (err: any) {
       setError(err.response?.data?.message || 'OTP verification failed');
     } finally {
