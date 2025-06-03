@@ -2,15 +2,11 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-<<<<<<< HEAD
-  "/login": "pages/login.js",
-  "/emotion": "pages/emotion.js",
-  "/home": "pages/home.js"
-=======
   "/": "pages/index.js",
-  "/api/auth/verify-otp": "pages/api/auth/verify-otp.js",
   "/login": "pages/login.js",
+  "/api/auth/login": "pages/api/auth/login.js",
+  "/api/auth/verify-otp": "pages/api/auth/verify-otp.js",
   "/home": "pages/home.js",
-  "/api/auth/login": "pages/api/auth/login.js"
->>>>>>> b7032f8430ee02a2a1f8404a9eabdb1086f455c7
+  "/api/emotions/save": "pages/api/emotions/save.js",
+  "/emotion": "pages/emotion.js"
 }
