@@ -1,4 +1,3 @@
-// pages/emotion.tsx
 import React, { useRef, useEffect } from 'react';
 import * as faceapi from 'face-api.js';
 
@@ -51,8 +50,30 @@ export default function EmotionDetection() {
           faceapi.draw.drawDetections(canvas, resized);
           faceapi.draw.drawFaceExpressions(canvas, resized);
         }
+
+        if (detections.length > 0) {
+          const expressions = detections[0].expressions;
+          const expressionEntries = Object.entries(expressions) as [keyof typeof expressions, number][];
+const maxExpression = expressionEntries.reduce((prev, curr) =>
+  curr[1] > prev[1] ? curr : prev
+)[0];
+
+          const userData = JSON.parse(localStorage.getItem('user') || '{}');
+          if (userData.email) {
+            await fetch('/api/emotions/save', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: userData.email,
+                emotion: maxExpression,
+              }),
+            }).catch((err) => console.error('Error saving emotion:', err));
+          }
+        }
       }
-    }, 200);
+    }, 3000); // Save every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
