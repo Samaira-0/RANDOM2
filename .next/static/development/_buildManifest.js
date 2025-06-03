@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 self.__BUILD_MANIFEST = (function(a){return {__rewrites:{afterFiles:[],beforeFiles:[],fallback:[]},__routerFilterStatic:a,__routerFilterDynamic:a,"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/emotion":["static\u002Fchunks\u002Fpages\u002Femotion.js"],"/home":["static\u002Fchunks\u002Fpages\u002Fhome.js"],sortedPages:["\u002F_app","\u002F_error","\u002Femotion","\u002Fhome"]}}(void 0));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+=======
+self.__BUILD_MANIFEST = (function(a){return {__rewrites:{afterFiles:[],beforeFiles:[],fallback:[]},__routerFilterStatic:a,__routerFilterDynamic:a,"/":["static\u002Fchunks\u002Fpages\u002Findex.js"],"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/home":["static\u002Fchunks\u002Fpages\u002Fhome.js"],"/login":["static\u002Fchunks\u002Fpages\u002Flogin.js"],sortedPages:["\u002F","\u002F_app","\u002F_error","\u002Fhome","\u002Flogin"]}}(void 0));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+>>>>>>> b7032f8430ee02a2a1f8404a9eabdb1086f455c7
